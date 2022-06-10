@@ -1,6 +1,8 @@
 import React, { useState,useRef,useEffect } from "react";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from 'uuid';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const LOCAL_STORAGE_KEY='todoApp.todos'
 
@@ -29,9 +31,9 @@ function App() {
   return (
     <>
       <TodoList todos={todos} />
-      <input ref={todoNameRef} type="text" />
-      <button onClick={onAddTodo}>Add Todo</button>
-      <button>Clear Complete</button>
+      <input ref={todoNameRef} variant="standard" />
+      <Button onClick={onAddTodo} variant="text">Add Todo</Button>
+      <Button variant="text">Clear Complete</Button>
       <div>
         0 left items
       </div>
