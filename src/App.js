@@ -31,7 +31,7 @@ function App() {
   return (
     <>
       <TodoList todos={todos} />
-      <input ref={todoNameRef} variant="standard" />
+      <input ref={todoNameRef} variant="standard" /><br></br>
       <Button onClick={onAddTodo} variant="text">Add Todo</Button>
       <Button variant="text">Clear Complete</Button>
       <div>
