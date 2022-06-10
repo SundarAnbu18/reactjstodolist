@@ -1,7 +1,9 @@
 import React, { useState,useRef,useEffect } from "react";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from 'uuid';
+import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 
 const LOCAL_STORAGE_KEY='todoApp.todos'
@@ -20,7 +22,21 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(todos))
   },[todos])
 
-  function onAddTodo(e){
+
+  
+ function BasicAlerts(e) {
+  return (
+    <>
+    <Stack sx={{ width: '100%' }} spacing={2}>
+      <Alert severity="error">This is an error alert — check it out!</Alert>
+      <Alert severity="warning">This is a warning alert — check it out!</Alert>
+      <Alert severity="info">This is an info alert — check it out!</Alert>
+      <Alert severity="success">This is a success alert — check it out!</Alert>
+    </Stack>
+    </>
+    
+  );
+} function onAddTodo(e){
     const name=todoNameRef.current.value
     if(name === '')return
     setTodos(prevTodos=>{
@@ -33,7 +49,7 @@ function App() {
       <TodoList todos={todos} />
       <input ref={todoNameRef} variant="standard" /><br></br>
       <Button onClick={onAddTodo} variant="text">Add Todo</Button>
-      <Button variant="text">Clear Complete</Button>
+      <Button variant="text" onClick={BasicAlerts}>Clear Complete</Button>
       <div>
         0 left items
       </div>
