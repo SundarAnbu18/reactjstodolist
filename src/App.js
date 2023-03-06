@@ -51,7 +51,7 @@ function App() {
       <Button onClick={onAddTodo} variant="text">Add Todo</Button>
       <Button variant="text" onClick={BasicAlerts}>Clear Complete</Button>
       <div>
-        0 left items
+        0 left items hdhdh
       </div>
     </>
   );
